@@ -284,6 +284,32 @@ header .header .btn button:hover {
 .gallery .taxigallery img {
   max-width: 100%;
 }
+.gallery .taxigallery .common {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery .taxigallery .common .effect {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  transition: all 0.9s;
+  margin: auto;
+  z-index: -1;
+  border: 1px solid white;
+  display: grid;
+  place-content: center;
+}
+.gallery .taxigallery .common:hover .effect {
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
 .gallery .taxigallery .img1 {
   grid-area: img1;
 }
@@ -426,7 +452,7 @@ header .header .btn button:hover {
   transform: rotateY(180deg);
 }
 .team .members .flip .front {
-  transition: 0.3s ease;
+  transition: 0.8s ease;
 }
 .team .members .flip .front img {
   max-width: 100%;
@@ -442,7 +468,7 @@ header .header .btn button:hover {
   place-content: center;
   transform: rotateY(-180deg);
   opacity: 0;
-  transition: 0.3s ease transform;
+  transition: 0.8s ease transform;
 }
 .team .members .flip .back h1 {
   font-size: 30px;
@@ -769,7 +795,7 @@ header .header .btn button:hover {
   font-size: 18px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   header .header .first {
     padding: 20px;
     flex-direction: column;
@@ -916,7 +942,9 @@ header .header .btn button:hover {
     margin-top: 30px;
   }
   .gallery .taxigallery img {
+    width: 100%;
     max-width: 100%;
+    vertical-align: middle;
   }
   .testimonial {
     margin-top: 30px;
@@ -951,41 +979,6 @@ header .header .btn button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-  }
-  .team .members .flip {
-    transition: 1.3s;
-    transition-property: transform;
-    position: relative;
-  }
-  .team .members .flip:hover {
-    transform: rotateY(180deg);
-  }
-  .team .members .flip .front img {
-    max-width: 100%;
-  }
-  .team .members .flip .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .team .members .flip .back h1 {
-    font-size: 20px;
-  }
-  .team .members .flip .back p {
-    font-size: 12px;
-  }
-  .team .members .flip .back ul {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-  }
-  .team .members .flip .back ul li {
-    font-size: 15px;
-    background-color: var(--colorgray);
-    padding: 10px;
-    border-radius: 50%;
   }
   .blogs {
     padding: unset;
